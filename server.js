@@ -56,9 +56,10 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+const PORT = process.env.PORT || 10000; // Ensure process.env.PORT is used
+server.listen(PORT, '0.0.0.0', () => {
+  // Bind to 0.0.0.0 for external access
+  console.log(`Server is running on port ${PORT}`);
 });
 
 // Schedule the task to run every 10 minutes
